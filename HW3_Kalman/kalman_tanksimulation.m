@@ -85,7 +85,7 @@ for i = 1:length(t)
     %K_t = Sigma_bar(i+1)*C_t'*inv(C_t*Sigma_bar(i+1)*C_t' + Q_t);
     %mu(i+1) = mu_bar(i+1) + K_t*(z(i) - C_t*mu_bar(i+1));
     %Sigma(i+1) = (eye(length(C_t)) - K_t*C_t)*Sigma_bar(i+1);
-    K_t = Sigma_bar*C_t'*inv(C_t*Sigma_bar*C_t' + Q_t);
+    K_t = Sigma_bar*C_t'*inv(C_t*Sigma_bar*C_t' + Q_t)
     mu = mu_bar + K_t*(z(i) - C_t*mu_bar);
     Sigma = (eye(length(C_t)) - K_t*C_t)*Sigma_bar;
 
